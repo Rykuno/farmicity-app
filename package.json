@@ -98,7 +98,7 @@
     "directories": {
       "buildResources": "resources",
       "output": "release"
-    },
+    }
   },
   "repository": {
     "type": "git",
