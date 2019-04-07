@@ -2,8 +2,10 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 import type { Store } from '../reducers/types';
 import Routes from '../Routes';
+import theme from '../theme';
 
 type Props = {
   store: Store,
@@ -16,7 +18,9 @@ export default class Root extends Component<Props> {
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          <Routes />
+          <MuiThemeProvider theme={theme}>
+            <Routes />
+          </MuiThemeProvider>
         </ConnectedRouter>
       </Provider>
     );
